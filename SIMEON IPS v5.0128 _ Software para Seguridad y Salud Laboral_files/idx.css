@@ -1,0 +1,137 @@
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#333;
+	padding: 2%;
+}
+a, a:hover {
+	color:#004F9F;
+}
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 212px;
+	padding: 0;
+	text-align: center;
+}
+.logo-simeon span {
+	display: block;
+	font-size: 1em;
+	color: #999;
+	line-height: 1.2;
+	padding:5px 5px 0px;
+}
+.logo-simeon img {
+	display:block;
+}
+#dvIdxFrm {
+	padding:0 0 5px;
+	margin: 10px 0 0;
+}
+#dvIdxTop {
+	/*font-weight:bold;*/
+}
+.form {
+	margin:0;
+	padding:15px;
+	border: 1px solid #eee;
+	background:#fff;
+	text-align:center;
+}
+.form-control {
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 5px 10px;
+}
+.form-control:focus {
+	z-index: 2;
+}
+input[type="text"] {
+	margin-bottom: 5px;
+}
+input[type="password"] {
+	margin-bottom: 15px;
+}
+.input-group {
+	margin-bottom: 10px;
+}
+.input-group + .btn {
+	margin-top: 15px;
+}
+.alert {
+	padding: 5px;
+	margin-bottom: 10px;
+}
+#dvIdxBtm {
+	font-family: 'Oswald', sans-serif;
+	color:#999;
+}
+#dvIdxBtm span {
+	color:#6c0;
+}
+#hash {
+	display: none;
+}
+#dvStatus {
+	position: absolute;
+	background-color: #fff;
+	z-index: 100;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+	opacity: 0.9;
+	-moz-opacity: 0.9;
+	-khtml-opacity: 0.9;
+	filter: alpha(opacity=90);
+}
+div#dvStatus p {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	width: 260px;
+	height: 75px;
+	margin-left: -130px;
+	margin-top: -75px;
+	padding: 50px 0px 15px 0px;
+	background: transparent url(../img/ico_loading.gif) no-repeat 50% 10px;
+	color: #000; /*	font-weight: bold;*/
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+}
+#dvCaptcha {
+	position: absolute;
+	z-index:1000000;
+	display:none;
+	left: 50%;
+	top: 50%;
+	width:342px;
+	height:auto;
+	margin-top: -110px;
+	margin-left: -175px;
+	padding:10px 10px 15px;
+	text-align:center;
+	background:#fff;
+	border:1px solid #333;
+	-moz-border-radius: 0 0 8px 8px / 0 0 8px 8px;
+	-webkit-border-radius: 0 0 8px 8px / 0 0 8px 8px;
+	border-radius: 0 0 8px 8px / 0 0 8px 8px;
+}
+#dvCaptcha p {
+	margin-top:0;
+	font-weight:bold;
+	color:#004F9F;
+	font-size: 1.1em;
+}
+#dvCaptcha .recaptchatable #recaptcha_response_field {
+	bottom: -15px!important;
+	margin: 0px 0 0 0!important;
+}

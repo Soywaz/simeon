@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://simeonips.com/validar/cmo/edz17xkm-omkm-s5ke-w0sv-3a49pjry0wlg -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <title>SIMEON IPS v5.0128 : Software para Seguridad y Salud Laboral</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://simeonips.com/validar/cmo/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <script type="text/javascript" async="" src="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/js"></script><script type="text/javascript" async="" charset="utf-8" src="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/recaptcha__es.js.descarga" crossorigin="anonymous" integrity="sha384-YBVxl9ZjsKOraoP2U7P94rSdK10DK/91rc/IgnlPW8SoPM7XyhFGYUxic7xB7fZC"></script><script async="" src="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/analytics.js.descarga"></script><script src="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/jquery.min.js.descarga"></script>
+
+    <link rel="stylesheet" href="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/bootstrap.min.js.descarga" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/ie10-viewport-bug-workaround.js.descarga"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/util.funcs.js.descarga"></script>
+
+    <link href="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/idx.css" rel="stylesheet" type="text/css">
+    <link href="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/css" rel="stylesheet" type="text/css">
+
+    <script src="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/api.js.descarga" async="" defer=""></script>
+    <style>
+        body { font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px; }
+        .grecaptcha-badge { display: none; }
+        .logo-simeon img { margin: 0 auto; }
+        .logo-simeon span { font-size: 11px; }
+        #dvIdxBtm { font-size: 12px; }
+        .container { 
+            width: 300px;
+            position: relative;
+            top: auto;
+            left: auto;
+            margin-right: 0;
+            transform: initial;
+            margin: 20px auto;
+        }
+        .input-group.block { display: block; }
+        .input-group + .btn { margin-top: 25px; }
+        .codigo {
+             font-family:courier;
+             font-size:12px;
+        }
+        hr {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+
+    <script languaje="javascript">
+        $(document).ready(function () {
+            
+            $('#idfrmValidateDoc').submit(function (e) {
+                e.preventDefault();
+
+                $('#go').prop('disabled', true).html('procesando...');
+                //$('.alert').hide();
+                //grecaptcha.execute();
+                grecaptcha.ready(function() {
+                  grecaptcha.execute('6Ld4N7MaAAAAAGzGyhvGDgcwp7p4Xz1qDSuxC7ej', {action: 'validar_cmo'}).then(function(token) {
+                      document.getElementById("g-recaptcha-response").value = token;
+                      document.getElementById("idfrmValidateDoc").submit();
+                  });
+                });
+
+                /*if ($('#login').val() != '' && $('#password').val() != '') {
+                    var log = $('#dvStatus').empty();
+                    log.html('<p>Validando datos de acceso...</p>');
+                    log.show();
+
+                    $('#go').prop('disabled', true).html('procesando...');
+                    $('.alert').hide();
+                    grecaptcha.execute();
+                } else {
+                    $('#idxMsg').html('Debe ingresar usuario y contraseña');
+                    $('.alert').addClass('alert-danger').show();
+                }*/
+
+            });
+        });
+
+        function onSubmit(token) {
+            document.getElementById("idfrmValidateDoc").submit();
+        }
+
+        var RecaptchaOptions = {
+            theme: 'white',
+            custom_theme_widget: 'recaptcha_widget',
+            lang: 'es'
+        };
+
+        $(window).load(function () {
+            $('#go').prop('disabled', false);
+        });
+    </script>
+</head>
+
+<body>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-76515678-2', 'auto');
+</script>
+
+
+<form name="frmValidateDoc" method="post" role="form" autocomplete="on" accept-charset="utf-8" action="https://simeonips.com/validar/cmo/edz17xkm-omkm-s5ke-w0sv-3a49pjry0wlg" id="idfrmValidateDoc">
+<div id="dvIdxContainer" class="container">
+    <div class="logo-simeon"><img src="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/simeon_ips_v5.png" alt="SIMEON IPS v5.0128 : Software para Seguridad y Salud Laboral" border="0"><span>Software para Seguridad y Salud Laboral</span></div>
+
+    <div id="dvIdxFrm">
+        <div class="form">
+            <div id="dvIdxMsg" class="alert alert-success">
+                <span id="idxMsg"><small>Tipo Documento</small><br><b>CONCEPTO MÉDICO OCUPACIONAL</b></span>            </div>
+
+            <div id="dvIdxTop">
+            <dl class="text-left"><dt>Prestador Servicios</dt><dd>Dr. Jorge Nelson Molina Martínez</dd><dt>Orden Servicio</dt><dd>902679</dd><dt>Tipo Evaluación - Énfasis</dt><dd>Pre-Ingreso, Cardiovascular</dd><dt>Fecha Emisión</dt><dd>2026-08-04 09:10:32</dd><dd><hr></dd><dt>Identificación</dt><dd>71193*** - ZAPATA</dd><dt>Cargo a desempeñar</dt><dd>DOCENTE</dd><dt>Empresa Usuaria</dt><dd>Persona Natural</dd><dd><hr><b>Concepto Ocupacional:</b><br></dd><dt>Pre-Ingreso</dt><dd>Condiciones de salud acordes con los requerimientos del perfil del cargo.</dd><dt>Cardiovascular</dt><dd>Riesgo Bajo</dd><dt>Restricciones Laborales</dt><dd>No</dd><dt>Recomendaciones Médicas</dt><dd>No</dd><dd><hr></dd><dt class="text-danger">Código Validación</dt><dd class="text-danger codigo">edz17xkm-omkm-s5ke-w0sv-3a49pjry0wl</dd></dl>
+                    <script>
+                        ga('send', 'pageview' ,'/validar/cmo/edz17xkm-omkm-s5ke-w0sv-3a49pjry0wlg');
+                    </script>
+            </div>
+        </div>
+    </div>
+    <div id="dvIdxBtm">
+        2026 ® Derechos reservados.<br>
+        <a href="http://www.simeon.com.co/" target="_blank" title="desarrollado por www.simeon.com.co">www.simeon.com.co</a>
+    </div>
+</div>
+
+<input id="_token" type="hidden" name="token" value="OTI4ejU5ZnNXSmlaK3dUQ0RLYWQzYVJ4NkVWT25CQ0ZDcGxwTTUyY0RERURwTG9jT0k5KzlFUFZ1YkhmeVIwdyMjZTNiMGM0NDI5OGZjMWMxNA==">
+</form>
+
+<div id="dvStatus"></div>
+
+
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-ipboin57j9im" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/anchor.html"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./SIMEON IPS v5.0128 _ Software para Seguridad y Salud Laboral_files/saved_resource.html"></iframe></div></body></html>

@@ -1,0 +1,243 @@
+function checkPesoBrutoX(field, rules, i, options){
+	
+	var compareField = rules[i + 1];
+	if($("#" + compareField) > 0) {
+	if (field.val() < $("#" + compareField).val())
+		return 'El peso neto NO puede ser mayor que el peso bruto';
+	} else
+		return 'Debe ingresar el peso neto';
+}
+
+
+
+
+function trim(cadena) {
+ /* str = str.replace( /^\s+/g, "" ); // strip leading
+  str = str.replace( /\s+$/g, "" ); // strip trailing
+
+  return str;*/
+
+	for(i=0; i<cadena.length; )
+	{
+		if(cadena.charAt(i)==" ")
+			cadena=cadena.substring(i+1, cadena.length);
+		else
+			break;
+	}
+
+	for(i=cadena.length-1; i>=0; i=cadena.length-1)
+	{
+		if(cadena.charAt(i)==" ")
+			cadena=cadena.substring(0,i);
+		else
+			break;
+	}
+
+	return cadena;
+}
+
+
+function showhide(what)
+{
+	elemento = document.getElementById(what);
+	//image = document.getElementById(img);
+
+	if (elemento.style.display=='none')
+	{
+		elemento.style.display='';
+		//image.scr="imgs/arrow_results_open.gif";
+	}
+	else
+	{
+		elemento.style.display='none';
+		//image.scr="imgs/arrow_results.gif";
+	}
+
+	return false;
+}
+
+function confirm_action(eId, msg) {
+  if(!document.getElementById(eId).checked) {
+    if(!confirm(msg))
+      return false;
+  }
+}
+
+/***********************************************
+* Disable alpha on key press
+***********************************************/
+
+function nokeys (type, event)
+{
+	ns6 = document.getElementById&&!document.all;
+	field = ns6 ? event.target : event.srcElement;
+
+	switch (type)
+	{
+		case 'noalpha': noalpha ('noalpha', event); break;
+		case 'nit': noalpha ('nit', event); break;
+		case 'upper'  : formatcase ('upper',field); break;
+		case 'lower'  : formatcase ('lower',field); break;
+	}
+}
+
+/***********************************************
+* Disable alpha on key press
+***********************************************/
+
+function noalpha (type, evt)
+{
+  var e = evt || window.event;
+  var validChars = (type == 'nit') ? '0123456789-' : '0123456789-()+.';
+	var keyCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+
+	//if (e.key < 45 || e.key > 57)
+	if(validChars.indexOf(String.fromCharCode(keyCode)) != -1 ||
+	   e.key == 'backspace' || e.key == 'Backspace' ||
+		 e.key == 'delete' || e.key == 'Delete' ||
+		 e.key == 'left' || e.key == 'ArrowLeft' ||
+		 e.key == 'right' || e.key == 'ArrowRight' ||
+		 e.key == 'tab' || e.key == 'Tab')
+		return;
+	else
+		e.preventDefault();
+}
+
+/***********************************************
+* Convert text value to uppercase/lowercase
+***********************************************/
+
+function formatcase (type,field)
+{
+  field.value = (type == 'upper') ? field.value.toUpperCase()
+                                  : field.value.toLowerCase();
+}
+
+/***********************************************
+* Disable "Enter" key in Form script- By Nurul Fadilah(nurul@REMOVETHISvolmedia.com)
+* This notice must stay intact for use
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+function noenter (frm, event)
+{
+  //event = new Event(event);
+	var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+	var ns6 = document.getElementById&&!document.all;
+	var field = ns6 ? event.target : event.srcElement;
+
+	if (keyCode == 13 && (field.type!='textarea' && field.type!='hidden' && field.type!='fieldset' && field.getAttribute("class")!='chosen-result' && field.getAttribute("class")!='note-editable'))
+	{
+		var i;
+		for (i = 0; i < frm.elements.length; i++)
+			if (field == frm.elements[i])
+				break;
+
+		if ((i + 1) == frm.elements.length)
+			return true;
+		else
+		{
+			i = (i + 1) % frm.elements.length;
+			if(frm.elements[i].type!='hidden' && frm.elements[i].type!='fieldset') frm.elements[i].focus();
+			else frm.elements[i+2].focus();
+
+			return false;
+		}
+	}
+	else
+		return true;
+}
+
+/****************************************************************************/
+
+function txtCounter(field, countfield, maxlimit)
+{
+	if (field.value.length > maxlimit)
+		field.value = field.value.substring(0, maxlimit);
+	else
+		document.getElementById(countfield).innerHTML = (field.value.length)+'/'+maxlimit;
+}
+
+/****************************************************************************/
+
+function autoSize(ele)
+{
+   ele.style.height = 'auto';
+   var newHeight = (ele.scrollHeight > ele.offsetHeight ? ele.scrollHeight : ele.offsetHeight);
+   ele.style.height = newHeight.toString() + 'px';
+
+   //var newLines = ele.value.length*8/ele.style.width;
+   //var newHeight = (ele.scrollWidth > ele.value.length*8 ? newLines*16 : ele.style.height);
+}
+
+function DateFormat(ele, e, tipo)
+{
+   noalpha('nit', e);
+   
+   if(ele.value.length == 4) ele.value = ele.value + '-';
+   if(ele.value.length == 7) ele.value = ele.value + '-';
+}
+
+
+var winModalWindow;
+
+function IgnoreEvents(e) { return false; }
+
+function ShowWindow(url,w,h)
+{
+  if (window.showModalDialog)
+  {
+    window.showModalDialog(url,null,"dialogWidth="+w+"px;dialogHeight="+h+"px;help:no;status:no");
+  }
+  else
+  {
+    window.top.captureEvents (Event.CLICK|Event.FOCUS);
+    window.top.onclick=IgnoreEvents;
+    window.top.onfocus=HandleFocus;
+	window.open (url,"ModalChild","dependent=yes,width="+w+",height="+h);
+    winModalWindow.focus();
+  }
+}
+
+
+function HandleFocus()
+{
+  if (winModalWindow)
+  {
+    if (!winModalWindow.closed) { winModalWindow.focus(); }
+    else { window.top.releaseEvents (Event.CLICK|Event.FOCUS); }
+  }
+  return false;
+}
+
+
+/****************************************************************************/
+
+function winpop(url,name,w,h,s,r,sb,left,top,more)
+{
+	s = s ? s : 'No';
+	r = r ? r : 'No';
+	sb = sb ? sb : 'No';
+  left = left ? left : 'XY';
+	top = top ? top : 'XY';
+
+  if (left=='XY') left=(screen.availWidth-w)/2;
+	if (top=='XY') top=(screen.availHeight-h)/2;
+
+	var features = 'width='+w+',height='+h+',status='+s+',resizable='+r+',scrollbars='+sb+',left='+left+',top='+top+more;
+	var myWin = window.open(url,name,features);
+	// Trae al frente la ventana
+	myWin.focus();
+
+	return myWin; //250728
+}
+
+/****************************************************************************/
+
+function resizar(w,h)
+{
+	window.resizeTo(w,h);
+	window.moveTo((screen.availWidth-w)/2,(screen.availHeight-h)/2);
+}
+
+/****************************************************************************/
